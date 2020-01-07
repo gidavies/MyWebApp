@@ -2,16 +2,15 @@ name: .NET Core
 
 on: [push]
 
-jobs:
+jobs: 
   build:
-
+    env:
+      SOLUTION_FILEPATH: MyWebApp/MyWebApp.sln
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Setup .NET Core
-      env:
-        SOLUTION_FILEPATH: MyWebApp/MyWebApp.sln
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.100
